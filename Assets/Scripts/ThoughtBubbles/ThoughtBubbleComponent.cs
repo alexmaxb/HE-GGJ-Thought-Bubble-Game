@@ -18,7 +18,7 @@ public class ThoughtBubbleComponent : MonoBehaviour
     private NPCState overriddenState;
     void Start()
     {
-        GetComponent<InteractableComponent>().OnInteract.AddListener(OnInteract);
+        //GetComponent<InteractableComponent>().OnInteract.AddListener(OnInteract);
 
         ActivateBubbleEffects();
     }
@@ -46,6 +46,10 @@ public class ThoughtBubbleComponent : MonoBehaviour
 
             ActivateBubbleEffects();
         }
+    }
+
+    public void OnSwapBubbles(ThoughtBubble bubble) {
+
     }
 
     private void ActivateBubbleEffects() {

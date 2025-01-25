@@ -5,8 +5,13 @@ using UnityEngine.Events;
 
 public class InteractableComponent : MonoBehaviour
 {
-
-    public UnityEvent<GameObject> OnInteract = new UnityEvent<GameObject>();
+    /**
+    * Event for when a gameobject interacts with this gameobject
+    * InteractableComponent - this gameobject - used for cases where the listener doesn't have access to the current gameobject
+    * Gameobject - the object interacting with this object
+    * 
+    */
+    public UnityEvent<InteractableComponent, GameObject> OnInteract = new UnityEvent<InteractableComponent, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,9 @@ public class InteractableComponent : MonoBehaviour
     }
 
     public void Interact(GameObject player) {
-        OnInteract.Invoke(player);
+        OnInteract.Invoke(this, player);
     }
+
+
+    
 }

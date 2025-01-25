@@ -16,7 +16,7 @@ MonoBehaviour:
   effectOnNPC:
   - idType: 0
     id: bob
-    dialogue: I guess I'm special
+    dialogue: I'm bob
     npcStateOverride: {fileID: 11400000, guid: 6de490961de92e94a8bf3b857be369b3, type: 2}
   - idType: 1
     id: guard
