@@ -5153,6 +5153,10 @@ PrefabInstance:
       value: Level_2Fail
       objectReference: {fileID: 0}
     - target: {fileID: 1542283979256033397, guid: 4f6de24242028574bbe25d6103f220cb, type: 3}
+      propertyPath: nextScene
+      value: Level_2Complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542283979256033397, guid: 4f6de24242028574bbe25d6103f220cb, type: 3}
       propertyPath: GuardsThatNeedToBeDistracted.Array.size
       value: 2
       objectReference: {fileID: 0}
