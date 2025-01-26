@@ -22,4 +22,4 @@ MonoBehaviour:
     id: 
     dialogue: I feel like I'm not supposed to be here
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  thoughtBubbleIcon: {fileID: 21300000, guid: 20e5325b476a24d91a83ecd8c8d20fa7, type: 3}

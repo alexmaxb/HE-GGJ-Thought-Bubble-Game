@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_2Fail.unity
     guid: 5ea746df82280d94da70bc897b183712
+  - enabled: 1
+    path: Assets/Scenes/Level_2Complete.unity
+    guid: ae67d0f34dafb40a892f6da6b1fd11fe
   m_configObjects: {}
