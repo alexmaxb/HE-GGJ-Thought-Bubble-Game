@@ -12,6 +12,8 @@ public class ItemInventory : MonoBehaviour
 
     public List<InventoryItem> currentInventory {get; private set;}
 
+    public SpriteRenderer inventoryRenderer;
+
     void Awake() {
         currentInventory = new List<InventoryItem>();
     }
@@ -22,6 +24,8 @@ public class ItemInventory : MonoBehaviour
         foreach(var item in heldObjects) {
             currentInventory.Add(item);
         }
+        ShowItem();
+
     }
 
     // Update is called once per frame
@@ -33,8 +37,11 @@ public class ItemInventory : MonoBehaviour
     public InventoryItem TakeItem() {
         if(currentInventory.Count == 0) return null;
 
+        
+
         InventoryItem item = currentInventory[0];
         currentInventory.Remove(item);
+        ShowItem();
 
         item.gameObject.transform.parent = null;
 
@@ -44,6 +51,8 @@ public class ItemInventory : MonoBehaviour
     public bool RemoveItem(InventoryItem item){
 
         if(currentInventory.Remove(item)) {
+
+            ShowItem();
             item.transform.parent = null;
             return true;
         }
@@ -63,6 +72,8 @@ public class ItemInventory : MonoBehaviour
         }
 
         item.gameObject.transform.parent = gameObject.transform;
+
+        ShowItem();
     }
 
     public bool CheckForItem(string itemName) {
@@ -73,5 +84,18 @@ public class ItemInventory : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void ShowItem() {
+        if(inventoryRenderer != null) {
+            if(currentInventory.Count > 0) {
+                inventoryRenderer.sprite = currentInventory[0].sprite;
+                inventoryRenderer.gameObject.SetActive(true);
+            }
+            else {
+                inventoryRenderer.gameObject.SetActive(false);
+            }
+            
+        }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    public DialogueController dialogueController;
     
     // Start is called before the first frame update
     void Start()
@@ -15,5 +17,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public void ShowDialogue(string dialogue) {
+        dialogueController.ShowDialogue(dialogue);
     }
 }

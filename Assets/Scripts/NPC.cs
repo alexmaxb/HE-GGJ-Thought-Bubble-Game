@@ -37,6 +37,8 @@ public class NPC : MonoBehaviour
     void OnInteract(InteractableComponent interactable, GameObject target) {
         if(target.TryGetComponent<Player>(out Player player)) {
             // Display dialogue
+            Debug.Log("Dialogue: " + currentDialogue);
+            player.ShowDialogue(currentDialogue);
         }
     }
 
