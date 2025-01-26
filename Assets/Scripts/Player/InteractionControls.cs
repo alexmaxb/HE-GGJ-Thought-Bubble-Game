@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Move))]
 public class InteractionControls : MonoBehaviour
 {
     public float interactRange = 3;
+    public float castWidth = .1f;
 
     public KeyCode interactKeyCode;
     private bool isInteractPressed = false;
 
+    
 
     public KeyCode swapKeyCode;
     private bool isSwapPressed = false;
@@ -45,13 +48,15 @@ public class InteractionControls : MonoBehaviour
 
 
     private void OnInteractPressed() {
+        
         GameObject target = DetectObject();
         if(target != null) {
             InteractableComponent interactable = target.GetComponent<InteractableComponent>();
             if(interactable) {
+                Debug.Log("Interact Pressed. Found interactable object");
                 interactable.Interact(this.gameObject);
-            }
-        }
+            } else Debug.Log("Interact Pressed. object not interactable");
+        } else Debug.Log("Interact Pressed. Didn't detect object");
     }
 
     private void OnSwapPressed() {
@@ -66,7 +71,10 @@ public class InteractionControls : MonoBehaviour
 
     public GameObject DetectObject() {
 
-        Collider2D hit = Physics2D.Linecast(transform.position, transform.position + transform.forward * interactRange).collider;
+        Vector2 pos = transform.position;
+
+        //Collider2D hit = Physics2D.Linecast(pos, pos + GetComponent<Move>().cachedDirection * interactRange, LayerMask.GetMask("Default")).collider;
+        Collider2D hit = Physics2D.CircleCast(transform.position, castWidth, GetComponent<Move>().cachedDirection, interactRange, LayerMask.GetMask("Default")).collider;
         return hit==null? null : hit.gameObject;
         
     }

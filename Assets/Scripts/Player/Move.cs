@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 
 
 public enum Directions
@@ -33,6 +34,7 @@ public class Move : MonoBehaviour
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		cachedDirection = Vector2.zero;
 	}
 
 	// [Header("Input keys")]
@@ -47,9 +49,11 @@ public class Move : MonoBehaviour
 	// The direction that will face the player
 	public Directions lookAxis = Directions.Up;
 
-	private Vector2 movement, cachedDirection;
+	private Vector2 movement;
+	public Vector2 cachedDirection {get; private set;}
 	private float moveHorizontal;
 	private float moveVertical;
+
 
 
 	// Update gets called every frame
@@ -65,10 +69,10 @@ public class Move : MonoBehaviour
 		//the axis to look can be decided with the "axis" variable
 		if(orientToDirection)
 		{
-			// if(movement.sqrMagnitude >= 0.01f)
-			// {
-			// 	cachedDirection = movement;
-			// }
+			if(movement.sqrMagnitude >= 0.01f)
+			{
+				cachedDirection = movement.normalized;
+			}
 			// SetAxisTowards(lookAxis, transform, cachedDirection);
 
 			if(Math.Abs(movement.x) >= 0.01f)

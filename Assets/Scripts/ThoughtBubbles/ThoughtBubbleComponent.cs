@@ -42,14 +42,13 @@ public class ThoughtBubbleComponent : MonoBehaviour
                 stateMachineOverride = false;
                 GetComponent<StateMachineComponent>().TransitionState(overriddenState);
 
+                GetComponent<NPC>().ResetDialogue();
+                
+
             }
 
             ActivateBubbleEffects();
         }
-    }
-
-    public void OnSwapBubbles(ThoughtBubble bubble) {
-
     }
 
     private void ActivateBubbleEffects() {
@@ -76,6 +75,8 @@ public class ThoughtBubbleComponent : MonoBehaviour
                 }
 
                 // TODO : Dialogue
+
+                npc.SetCurrentDialogue(effect.dialogue);
 
                 break;
             }
