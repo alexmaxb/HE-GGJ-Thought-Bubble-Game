@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e9eafe765dfb147b4a17fd83d5df69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactRange: 5
-  castWidth: 3
+  interactRange: 3
+  castWidth: 2
   interactKeyCode: 101
   swapKeyCode: 32
 --- !u!50 &3772630813789169513
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentThoughtBubble: {fileID: 11400000, guid: 9941db2bd8641fe4480e20fb87b3ac40, type: 2}
+  thoughtBubbleRenderer: {fileID: 0}
   OnNewThoughtBubble:
     m_PersistentCalls:
       m_Calls: []
