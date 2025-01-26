@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 
 public enum Directions
@@ -19,15 +20,19 @@ public enum KeyGroups
 
 [AddComponentMenu("Playground/Movement/Move With Arrows")]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Move : MonoBehaviour
 {
 
 	[HideInInspector]
 	public new Rigidbody2D rigidbody2D;
 
+	public SpriteRenderer spriteRenderer;
+
 	void Awake ()
 	{
 		rigidbody2D = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	// [Header("Input keys")]
@@ -60,11 +65,14 @@ public class Move : MonoBehaviour
 		//the axis to look can be decided with the "axis" variable
 		if(orientToDirection)
 		{
-			if(movement.sqrMagnitude >= 0.01f)
-			{
-				cachedDirection = movement;
-			}
-			SetAxisTowards(lookAxis, transform, cachedDirection);
+			// if(movement.sqrMagnitude >= 0.01f)
+			// {
+			// 	cachedDirection = movement;
+			// }
+			// SetAxisTowards(lookAxis, transform, cachedDirection);
+
+			if(Math.Abs(movement.x) >= 0.01f)
+				spriteRenderer.flipX = movement.x > 0;
 		}
 	}
 

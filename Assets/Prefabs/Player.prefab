@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 3
-  interactKeyCode: 0
-  swapKeyCode: 0
+  interactKeyCode: 101
+  swapKeyCode: 32
 --- !u!50 &3772630813789169513
 Rigidbody2D:
   serializedVersion: 4
@@ -66,7 +66,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 9
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -93,8 +93,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   speed: 5
-  orientToDirection: 0
+  orientToDirection: 1
   lookAxis: 0
 --- !u!114 &4409076278974115574
 MonoBehaviour:
