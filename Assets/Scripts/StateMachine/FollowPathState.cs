@@ -2,16 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPathState : MonoBehaviour
+[CreateAssetMenu(menuName = "StateMachine/FollowPathState")]
+public class FollowPathState : NPCState
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public string PathID;
+
+    public override void OnEndState(GameObject gameObject)
     {
-        
+        // Disable path follow component
+        if(gameObject.TryGetComponent<PathFollower>(out PathFollower follower)) {
+            follower.followPath = EFollowPathState.DISABLED;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEnterState(GameObject gameObject)
+    {
+        //enable path follow component
+        Path p = FindObjectOfType<PathLibrary>().GetPathByKey(PathID);
+        if(p!=null && gameObject.TryGetComponent<PathFollower>(out PathFollower follower)) {
+            follower.ResumeIfPossible(p);
+        }
+    }
+
+    public override void UpdateState(float dt, StateMachineComponent stateMachine, GameObject gameObject)
     {
         
     }

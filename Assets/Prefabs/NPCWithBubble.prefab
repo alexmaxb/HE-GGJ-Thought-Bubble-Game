@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6654615850770660231}
   - component: {fileID: 7233978080132766490}
+  - component: {fileID: 5805448425715230819}
+  - component: {fileID: 2741650987948574742}
   m_Layer: 2
   m_Name: BubbleTrigger
   m_TagString: Untagged
@@ -48,6 +50,118 @@ MonoBehaviour:
   radius: 3
   bubbleGameObject: {fileID: 3695204250028120026}
   thoughtIcon: {fileID: 1213364386800664145}
+--- !u!82 &5805448425715230819
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041735137796969912}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2741650987948574742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041735137796969912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789c641f815c5504caf14092d747ddd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 68d1f554cef4226458fb2178a52a4073, type: 3}
+  - {fileID: 8300000, guid: a56223244b0c32745913478b227261fc, type: 3}
+  - {fileID: 8300000, guid: 6271aef8108d6734dbfb2eef0688610e, type: 3}
 --- !u!1 &1723147865141211328
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +346,7 @@ GameObject:
   - component: {fileID: 1914198726160011060}
   - component: {fileID: 398010447858067107}
   - component: {fileID: 2110921345129115642}
+  - component: {fileID: 1451203861128137132}
   m_Layer: 0
   m_Name: NPCWithBubble
   m_TagString: Untagged
@@ -408,3 +523,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.86, y: 2.16}
   m_EdgeRadius: 0
+--- !u!114 &1451203861128137132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450210946433062764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ca313fe2c2c3e40920cef919a92539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followPath: 0
+  currentPath: {fileID: 0}
+  speed: 5
+  waypointProximityThreshold: 0.1

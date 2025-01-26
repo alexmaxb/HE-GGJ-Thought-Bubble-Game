@@ -7,6 +7,9 @@ public class ItemInventory : MonoBehaviour
     [SerializeField]
     private GameObject[] heldObjects;
 
+    public bool enableAudio = false;
+    public RandomAudioPlayer inventoryAudioPlayer;
+
     public List<GameObject> currentInventory {get; private set;}
 
     // Start is called before the first frame update
@@ -47,5 +50,9 @@ public class ItemInventory : MonoBehaviour
 
     public void AddItem(GameObject item) {
         currentInventory.Add(item);
+
+        if(enableAudio && inventoryAudioPlayer != null) {
+            inventoryAudioPlayer.PlayClip();
+        }
     }
 }

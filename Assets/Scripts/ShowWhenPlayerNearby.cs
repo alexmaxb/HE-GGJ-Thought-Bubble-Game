@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+[RequireComponent(typeof(RandomAudioPlayer))]
 public class ShowWhenPlayerNearby : MonoBehaviour
 {
 
@@ -15,8 +16,11 @@ public class ShowWhenPlayerNearby : MonoBehaviour
 
     public SpriteRenderer thoughtIcon;
 
+    private RandomAudioPlayer randomAudioPlayer;
+
 
     void Awake() {
+        randomAudioPlayer = GetComponent<RandomAudioPlayer>();
         trigger = gameObject.AddComponent<CircleCollider2D>();
         trigger.radius = radius;
         trigger.isTrigger = true;
@@ -44,6 +48,7 @@ public class ShowWhenPlayerNearby : MonoBehaviour
         // check player
         if(col.GetComponent<Player>() != null){
             bubbleGameObject.SetActive(true);
+            randomAudioPlayer.PlayClip();
         }
     }
 
