@@ -13,6 +13,8 @@ public class ShowWhenPlayerNearby : MonoBehaviour
 
     private CircleCollider2D trigger;
 
+    public SpriteRenderer thoughtIcon;
+
 
     void Awake() {
         trigger = gameObject.AddComponent<CircleCollider2D>();
@@ -34,8 +36,8 @@ public class ShowWhenPlayerNearby : MonoBehaviour
         
     }
 
-    public void OnSwitchBubbleIcon() {
-
+    public void OnSwitchBubbleIcon(Sprite newBubbleIcon) {
+        thoughtIcon.sprite = newBubbleIcon;
     }
 
     void OnTriggerEnter2D(Collider2D col) {

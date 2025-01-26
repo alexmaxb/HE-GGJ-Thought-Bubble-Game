@@ -44,7 +44,7 @@ public class ThoughtBubble : ScriptableObject
 
 
     [SerializeField]
-    public Image thoughtBubbleIcon;
+    public Sprite thoughtBubbleIcon;
 
 
     public ThoughtBubble(){}

@@ -14,10 +14,12 @@ public class NPC : MonoBehaviour
 
     public string defaultDialogue = "";
     private string currentDialogue;
+    
 
     void Awake() {
         currentDialogue = defaultDialogue;
         GetComponent<InteractableComponent>().OnInteract.AddListener(OnInteract);
+        
     }
 
     // Start is called before the first frame update

@@ -16,6 +16,14 @@ public class ThoughtBubbleComponent : MonoBehaviour
 
     private bool stateMachineOverride = false;
     private NPCState overriddenState;
+
+    private ShowWhenPlayerNearby showWhenPlayerNearby;
+
+    void Awake() {
+        showWhenPlayerNearby = GetComponentInChildren<ShowWhenPlayerNearby>();
+        
+    }
+
     void Start()
     {
         //GetComponent<InteractableComponent>().OnInteract.AddListener(OnInteract);
@@ -57,6 +65,10 @@ public class ThoughtBubbleComponent : MonoBehaviour
 
         if(currentThoughtBubble == null) {Debug.LogError("ThoughtBubbleComponent for npc " + npc.name + "doesn't have a thought bubble"); return;}
 
+        if(currentThoughtBubble.thoughtBubbleIcon != null) {
+            showWhenPlayerNearby.OnSwitchBubbleIcon(currentThoughtBubble.thoughtBubbleIcon);
+        }
+
         foreach(var effect in currentThoughtBubble.effectOnNPC) {
             // check if the filter matches this npc
             if((effect.idType == IDMatchType.INDIVIDUAL && effect.id == npc.id) ||
@@ -77,6 +89,7 @@ public class ThoughtBubbleComponent : MonoBehaviour
                 // TODO : Dialogue
 
                 npc.SetCurrentDialogue(effect.dialogue);
+
 
                 break;
             }
