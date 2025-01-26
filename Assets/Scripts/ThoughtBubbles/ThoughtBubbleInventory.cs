@@ -13,6 +13,8 @@ public class ThoughtBubbleInventory : MonoBehaviour
     [SerializeField]
     private ThoughtBubble currentThoughtBubble;
 
+    public SpriteRenderer thoughtBubbleRenderer;
+
 
     
     /**
@@ -28,6 +30,10 @@ public class ThoughtBubbleInventory : MonoBehaviour
         currentThoughtBubble = bubble;
 
         OnNewThoughtBubble.Invoke(bubble);
+
+        if(thoughtBubbleRenderer != null) {
+            thoughtBubbleRenderer.sprite = currentThoughtBubble.thoughtBubbleIcon;
+        }
 
         return temp;
     }
