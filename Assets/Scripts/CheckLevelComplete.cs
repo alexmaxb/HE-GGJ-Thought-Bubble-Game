@@ -35,6 +35,7 @@ public class CheckLevelComplete : MonoBehaviour
             foreach(var item in requiredInventoryItems) {
                 if(!inventory.CheckForItem(item)) {
                     FailLevel();
+                    return;
                 }
             }
 
@@ -43,6 +44,7 @@ public class CheckLevelComplete : MonoBehaviour
                 if(guard.TryGetComponent(out Guard guardComponent)) {
                     if(guardComponent.isAlert) {
                         FailLevel();
+                        return;
                     }
                 }
             }

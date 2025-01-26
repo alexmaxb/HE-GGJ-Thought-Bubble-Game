@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7362640139254630479}
   - component: {fileID: 5754682686270696618}
   - component: {fileID: 7439112876010410795}
+  - component: {fileID: 8197651986149036363}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -208,6 +209,19 @@ MonoBehaviour:
   currentPath: {fileID: 0}
   speed: 5
   waypointProximityThreshold: 0.1
+--- !u!114 &8197651986149036363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56812386887643564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e24939f968b8474b9abd4afd2ce7136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlert: 0
 --- !u!1 &214319061038266938
 GameObject:
   m_ObjectHideFlags: 0

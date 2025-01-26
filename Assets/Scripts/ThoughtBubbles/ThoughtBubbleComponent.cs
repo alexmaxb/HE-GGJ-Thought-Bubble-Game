@@ -74,6 +74,8 @@ public class ThoughtBubbleComponent : MonoBehaviour
             if((effect.idType == IDMatchType.INDIVIDUAL && effect.id == npc.id) ||
             (effect.idType == IDMatchType.CATEGORY && effect.id == npc.category) ||
             (effect.idType == IDMatchType.ALL)) {
+
+                Debug.Log("Thought bubble has effect for this npc" );
                 // Apply effect
 
                 // if this effect overrides the state of the NPC, save the current state and transition to the override state.

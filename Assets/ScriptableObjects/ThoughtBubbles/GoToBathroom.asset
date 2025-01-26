@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb2f14bc491731478a51dfdd0798e44, type: 3}
   m_Name: GoToBathroom
   m_EditorClassIdentifier: 
-  ThoughtBubbleName: 
-  effectOnNPC: []
+  ThoughtBubbleName: GoToTheBathroom
+  effectOnNPC:
+  - idType: 1
+    id: guard
+    dialogue: I really need to go!!!
+    npcStateOverride: {fileID: 11400000, guid: f5eeb155286e7584d84b7192eda64cc8, type: 2}
+  - idType: 2
+    id: 
+    dialogue: I need to go to the bathroom!
+    npcStateOverride: {fileID: 0}
   thoughtBubbleIcon: {fileID: 21300000, guid: 1c54b43c728ad47b584a6d2bceddfc79, type: 3}

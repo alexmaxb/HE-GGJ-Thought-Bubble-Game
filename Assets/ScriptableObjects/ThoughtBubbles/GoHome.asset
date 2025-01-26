@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb2f14bc491731478a51dfdd0798e44, type: 3}
-  m_Name: Hungry
+  m_Name: GoHome
   m_EditorClassIdentifier: 
-  ThoughtBubbleName: Hungry
+  ThoughtBubbleName: GoHome
   effectOnNPC:
   - idType: 1
     id: guard
-    dialogue: Man I'm really hungry. But I can't abandon my post!
-    npcStateOverride: {fileID: 0}
+    dialogue: I'm going to go home
+    npcStateOverride: {fileID: 11400000, guid: 52b68e548fefe654281456863083e2f8, type: 2}
   - idType: 2
-    id: 
-    dialogue: I'm pretty hungry right now...
+    id: guard
+    dialogue: I feel like going home...
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 21300000, guid: a070305b70a964a4a8983fcc282a8b14, type: 3}
+  thoughtBubbleIcon: {fileID: 0}

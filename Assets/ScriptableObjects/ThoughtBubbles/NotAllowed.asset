@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb2f14bc491731478a51dfdd0798e44, type: 3}
-  m_Name: Hungry
+  m_Name: NotAllowed
   m_EditorClassIdentifier: 
-  ThoughtBubbleName: Hungry
+  ThoughtBubbleName: NotAllowed
   effectOnNPC:
   - idType: 1
     id: guard
-    dialogue: Man I'm really hungry. But I can't abandon my post!
+    dialogue: You're not allowed in here!
     npcStateOverride: {fileID: 0}
   - idType: 2
     id: 
-    dialogue: I'm pretty hungry right now...
+    dialogue: I feel like I'm not supposed to be here
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 21300000, guid: a070305b70a964a4a8983fcc282a8b14, type: 3}
+  thoughtBubbleIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}

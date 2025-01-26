@@ -10,16 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecb2f14bc491731478a51dfdd0798e44, type: 3}
-  m_Name: Hungry
+  m_Name: AdmirePainting
   m_EditorClassIdentifier: 
-  ThoughtBubbleName: Hungry
+  ThoughtBubbleName: AdmirePainting
   effectOnNPC:
   - idType: 1
     id: guard
-    dialogue: Man I'm really hungry. But I can't abandon my post!
+    dialogue: I can't get that painting out of my head!
+    npcStateOverride: {fileID: 0}
+  - idType: 0
+    id: bob
+    dialogue: I love this painting
     npcStateOverride: {fileID: 0}
   - idType: 2
     id: 
-    dialogue: I'm pretty hungry right now...
+    dialogue: I prefer that other painting
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 21300000, guid: a070305b70a964a4a8983fcc282a8b14, type: 3}
+  thoughtBubbleIcon: {fileID: 21300000, guid: 1e979133363ce4430b0efca17245f607, type: 3}

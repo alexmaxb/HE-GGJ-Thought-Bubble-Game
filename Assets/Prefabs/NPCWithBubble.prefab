@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 398010447858067107}
   - component: {fileID: 2110921345129115642}
   - component: {fileID: 1451203861128137132}
+  - component: {fileID: 422890855490558716}
   m_Layer: 0
   m_Name: NPCWithBubble
   m_TagString: Untagged
@@ -539,3 +540,18 @@ MonoBehaviour:
   currentPath: {fileID: 0}
   speed: 5
   waypointProximityThreshold: 0.1
+--- !u!114 &422890855490558716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450210946433062764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3002eb2976a18cf4bab445362990e05d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []
