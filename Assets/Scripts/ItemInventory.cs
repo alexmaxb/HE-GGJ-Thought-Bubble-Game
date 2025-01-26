@@ -5,12 +5,16 @@ using UnityEngine;
 public class ItemInventory : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] heldObjects;
+    public InventoryItem[] heldObjects;
 
     public bool enableAudio = false;
     public RandomAudioPlayer inventoryAudioPlayer;
 
-    public List<GameObject> currentInventory {get; private set;}
+    public List<InventoryItem> currentInventory {get; private set;}
+
+    void Awake() {
+        currentInventory = new List<InventoryItem>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,21 +30,21 @@ public class ItemInventory : MonoBehaviour
         
     }
 
-    public GameObject TakeItem() {
-        if(heldObjects.Length == 0) return null;
+    public InventoryItem TakeItem() {
+        if(currentInventory.Count == 0) return null;
 
-        GameObject item = currentInventory[0];
+        InventoryItem item = currentInventory[0];
         currentInventory.Remove(item);
 
-        item.transform.parent = null;
+        item.gameObject.transform.parent = null;
 
         return item;
     }
 
-    public bool RemoveItem(GameObject gameObject){
+    public bool RemoveItem(InventoryItem item){
 
-        if(currentInventory.Remove(gameObject)) {
-            gameObject.transform.parent = null;
+        if(currentInventory.Remove(item)) {
+            item.transform.parent = null;
             return true;
         }
 
@@ -48,11 +52,16 @@ public class ItemInventory : MonoBehaviour
     }
 
 
-    public void AddItem(GameObject item) {
+    public void AddItem(InventoryItem item) {
+
+        Debug.Log("Received item: " + item.itemName);
+
         currentInventory.Add(item);
 
         if(enableAudio && inventoryAudioPlayer != null) {
             inventoryAudioPlayer.PlayClip();
         }
+
+        item.gameObject.transform.parent = gameObject.transform;
     }
 }
