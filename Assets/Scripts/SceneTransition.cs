@@ -22,4 +22,9 @@ public class SceneTransition : MonoBehaviour
     public void Transition() {
         SceneManager.LoadScene(nextScene);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
