@@ -64,4 +64,14 @@ public class ItemInventory : MonoBehaviour
 
         item.gameObject.transform.parent = gameObject.transform;
     }
+
+    public bool CheckForItem(string itemName) {
+        foreach(InventoryItem item in currentInventory) {
+            if(item.itemName == itemName) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
