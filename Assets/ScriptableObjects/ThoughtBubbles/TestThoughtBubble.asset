@@ -26,4 +26,4 @@ MonoBehaviour:
     id: all
     dialogue: Default response
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 0}
+  thoughtBubbleIcon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}

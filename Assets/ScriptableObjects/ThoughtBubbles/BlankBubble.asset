@@ -18,4 +18,4 @@ MonoBehaviour:
     id: .
     dialogue: ...
     npcStateOverride: {fileID: 0}
-  thoughtBubbleIcon: {fileID: 0}
+  thoughtBubbleIcon: {fileID: 1684983132, guid: 01a62ffe41c9f66468fd2850eb30431e, type: 3}
