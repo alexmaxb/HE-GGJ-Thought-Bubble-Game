@@ -6788,7 +6788,7 @@ GameObject:
   - component: {fileID: 1247137384}
   - component: {fileID: 1247137386}
   - component: {fileID: 1247137385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tilemap_marble (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
